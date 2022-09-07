@@ -1,20 +1,21 @@
+//                                  INICIO DE APP
 iniciarApp();
 function iniciarApp(){
     alert("Bienvenido a Cervezas Tacuara")
     console.log("Bienvenido, iniciando compra...");
     nombreUsuario();
 }
-
+//                                  FUNCTION USUARIO
 function nombreUsuario(){}
     let usuario = prompt("Ingrese su nombre:");
     console.log(`El cliente es: ${usuario}`);
-
+//                                  PRODUCTOS
     let ipaSanfer = 300
     let ipaSorachi = 400
     let jimMorri = 500
     
 producto();
-
+//                                  SWICH/FUNCTION PRODUCTO
 function producto(){}
     let action = prompt(`${usuario} ¿Que lata de cerveza desea adquirir?
     1: Ipa San Fernando
@@ -78,16 +79,7 @@ function producto(){}
         } else {
             alert (`${usuario} no ingreso una opcion valida`);
         }
-    //                                  COMPRAR MAS
-    /*function mas (){}
-    let mas = Number(prompt("¿Desea realizar otra compra? [1] Para comprar mas | [2] Para salir"));
-    if (mas === "1"){
-        producto();
-    } else (mas === "2");{
-        out();
-    }
-    */
-//                                  FUNCTION DE SALIDA
+//                                      FUNCTION DE SALIDA
 function out(){
     console.log(`${usuario} ¡Compra exitosa!`)
     alert(`Gracias por su visita ${usuario} ¡Hasta Pronto!`)
