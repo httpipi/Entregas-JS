@@ -10,36 +10,35 @@ function nombreUsuario(){}
     let usuario = prompt("Ingrese su nombre:");
     console.log(`El cliente es: ${usuario}`);
 //                                  PRODUCTOS
+/*
 const lata1 = {
     nombre : "Ipa San Fernando",
-    stock : 30,
     precio : 300,
     disponible : false,
 };
 const lata2 = {
     nombre : "Ipa Sorachi",
-    stock : 30,
     precio : 400,
     disponible : true,
 };
 const lata3 = {
     nombre : "Jim Morrison",
-    stock : 30,
     precio : 500,
     disponible : true,
-};
+};*/
 //                                      ARRAYS
 
-const array1 = [lata1, lata2, lata3];
-delete lata1.stock;
-delete lata2.stock;
-delete lata3.stock;
 
-const nuevoPrecio = [lata1, lata2, lata3]
-
-lata1.precio = 400;
+const Productos = [
+    {nombre: `Ipa San Fernando`, precio: 400, disponible: true},
+    {nombre: "Ipa Sorachi", precio: 500, disponible: true},
+    {nombre: "Jim Morrison", precio: 600, disponible: true}
+]
+console.log(Productos);
+/*lata1.precio = 400;
 lata2.precio = 500;
-lata3.precio = 600;
+lata3.precio = 600;*/
+
 producto();
 //                                  SWICH/FUNCTION PRODUCTO
 function producto(){
@@ -51,7 +50,7 @@ function producto(){
     `);
     switch(action){
         case "1":
-            console.log(`Lata de Ipa San Fernando tiene un valor de: $${lata1.precio}`);
+            console.log(`Lata de  tiene un valor de: $$`);
             break;
         case "2":
             console.log(`Lata de Ipa Sorachi tiene un valor de: $${lata2.precio}`);
@@ -81,7 +80,7 @@ function producto(){
         //                              TOTAL IPA SORACHI
         
     } else if (action === "2"){
-        let cantidad = Number(prompt(`${usuario} ¿Cuantas latas de ${lata2.nombre} adquirir?`))
+        let cantidad = Number(prompt(`${usuario} ¿Cuantas latas de ${lata2.nombre} desea adquirir?`))
             sumaSorachi();
         function sumaSorachi(){
             return lata2.precio * cantidad;
