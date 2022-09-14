@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,11 @@
 	<meta name="author" content="Nicolas Rastelli - httpipi">
 	<link rel="shortcut icon" href="img/favicon.svg">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="main.css">
 </head>
+
 <body>
 	<!-- NAV -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark bg-gradient">
@@ -18,84 +21,97 @@
 			<a class="navbar-brand" href="#">
 				<img class="w-100" src="img/sucupots.svg" alt="logo Sucupots macetas de cemento">
 			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 		</div>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav text-white-50 fs-4 fw-bold">
-					<button class="btn-more carritoBtn fw-bold T-sizeM bg-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Carrito</button>
-				</div>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav text-white-50 fs-4 fw-bold">
+				<button class="btn-more carritoBtn fw-bold T-sizeM bg-secondary" type="button"
+					data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+					aria-controls="offcanvasWithBothOptions">Carrito</button>
 			</div>
-			<!-- OFFCANVAS -->
-		<div class="offcanvas offcanvas-start bg-dark w-auto" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+		</div>
+		<!-- OFFCANVAS -->
+		<div class="offcanvas offcanvas-start bg-dark w-auto" data-bs-scroll="true" tabindex="-1"
+			id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
 			<div class="offcanvas-header">
 				<h5 class="offcanvas-title font T-sizeM" id="offcanvasWithBothOptionsLabel">Lista del carrito.</h5>
-				<button type="button" id="eliminar" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				<button type="button" id="eliminar" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+					aria-label="Close"></button>
 			</div>
-			<div id="carritoCanvas" class="offcanvas-body bd-sidebar">
+			<div id="carritoCanvas" class="offcanvas-body">
 				<a name="carritoCanvas"></a>
 			</div>
 		</div>
 	</nav>
 	<!-- HEADER CARRUSEL -->
-	<header class="carrusel w-70" id="header">
+	<header class="carrusel w-60" id="header">
 		<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="img/header.png" class="d-block m-auto w-70" alt="Modelos de maceta de cemento con diseño Sucupots">
-			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="img/header.png" class="d-block m-auto w-70"
+						alt="Modelos de maceta de cemento con diseño Sucupots">
+				</div>
 				<div class="carousel-item">
-				<img src="img/MayoristaHeader.png" class="d-block m-auto w-70" alt="Modelos de maceta de cemento con diseño Sucupots">
+					<img src="img/MayoristaHeader.png" class="d-block m-auto w-70"
+						alt="Modelos de maceta de cemento con diseño Sucupots">
+				</div>
+				<div class="carousel-item">
+					<img src="img/ProductosHeader.png" class="d-block m-auto w-70"
+						alt="Modelos de maceta de cemento con diseño Sucupots">
+				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="img/ProductosHeader.png" class="d-block m-auto w-70" alt="Modelos de maceta de cemento con diseño Sucupots">
-			</div>
-			</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
-		</button>
-	</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
 	</header>
 	<!-- MAIN -->
 	<main>
 		<section class="py-3 bg-color3">
 			<h1 class="text-center">Productos</h1>
-			<div id="container" class="row prod-wrapper bg-dark m-auto text-center" ></div>
+			<div id="container" class="row prod-wrapper bg-dark m-auto text-center"></div>
 			</div>
 		</section>
 	</main>
 	<!-- FOOTER -->
 	<footer class="bg-dark bg-gradient">
-			<nav class="flex-row">
-				<div class="d-flex justify-content-evenly">
-					<ul class="d-flex flex-row bd-highlight mb-3">
-						<li class="p-2 bd-highlight">
-							<a href="https://www.facebook.com/" target="_blank">
-							<img src="img/facebook.png" alt="facebook logo"></a>
-						</li>
-						<li class="p-2 bd-highlight">
-							<a href="https://www.instagram.com/" target="_blank">
-							<img src="img/instagram.png" alt="instagram logo"></a>
-						</li>
-						<li class="p-2 bd-highlight">
-							<a href="https://twitter.com/" target="_blank">
-							<img src="img/twitter.png" alt="twitter logo"></a>
-						</li>
-					</ul>
+		<nav class="flex-row">
+			<div class="d-flex justify-content-evenly">
+				<ul class="d-flex flex-row bd-highlight mb-3">
 					<li class="p-2 bd-highlight">
-						<a href="#" target="">
-						<img src="img/whatsapp.png" alt="whatsapp logo"></a>
+						<a href="https://www.facebook.com/" target="_blank">
+							<img src="img/facebook.png" alt="facebook logo"></a>
 					</li>
-				</div>
-			</nav>
+					<li class="p-2 bd-highlight">
+						<a href="https://www.instagram.com/" target="_blank">
+							<img src="img/instagram.png" alt="instagram logo"></a>
+					</li>
+					<li class="p-2 bd-highlight">
+						<a href="https://twitter.com/" target="_blank">
+							<img src="img/twitter.png" alt="twitter logo"></a>
+					</li>
+				</ul>
+				<li class="p-2 bd-highlight">
+					<a href="#" target="">
+						<img src="img/whatsapp.png" alt="whatsapp logo"></a>
+				</li>
+			</div>
+		</nav>
 	</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="main.js"></script>
 </body>
+
 </html>
