@@ -21,18 +21,20 @@
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+		</div>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav text-white-50 fs-4 fw-bold">
+				<div class="navbar-nav text-white-50 fs-4 fw-bold">
+					<button class="btn-more carritoBtn fw-bold T-sizeM bg-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Carrito</button>
+				</div>
+			</div>
 			<!-- OFFCANVAS -->
-			<button class="btn-more fw-bold T-sizeM bg-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Carrito</button>
-			<div class="offcanvas offcanvas-start bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-				<div class="offcanvas-header">
-				<h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Lista del carrito.</h5>
-				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-				<p>Aqui se veran los productos del carrito.</p>
-				</div>
+		<div class="offcanvas offcanvas-start bg-dark w-auto" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title font T-sizeM" id="offcanvasWithBothOptionsLabel">Lista del carrito.</h5>
+				<button type="button" id="eliminar" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div id="carritoCanvas" class="offcanvas-body bd-sidebar">
+				<a name="carritoCanvas"></a>
 			</div>
 		</div>
 	</nav>
@@ -64,70 +66,9 @@
 	<main>
 		<section class="py-3 bg-color3">
 			<h1 class="text-center">Productos</h1>
-			<div class="row prod-wrapper bg-dark m-auto text-center">
-				<!--1-->
-				<div class="card bg-dark m-auto" style="width: 18rem;">
-					<img src="img/m-13.png" class="card-img-top w-100 d-block" alt="Maceta de cemento figura geometrica de 10 centimetros">
-					<div class="card-body">
-						<h5 class="card-title T-sizeM">Berlin</h5>
-						<h6 class="card-subtitle mb-2 text-muted">$1000</h6>
-						<p class="card-text">Maceta de cemento 10Cm x 10Cm</p>
-						<a href="#" class="btn-secondary btn-more2 text-decoration-none">Agregar al carrito</a>
-					</div>
-				</div>
-				<!--2-->
-				<div class="card bg-dark m-auto" style="width: 18rem;">
-					<img src="img/m-14.png" alt="Maceta de cemento figura corazon de 10 centimetros" class="w-100 d-block card-img-top">
-					<div class="card-body">
-						<h5 class="card-title T-sizeM">Paris</h5>
-						<h6 class="card-subtitle mb-2 text-muted">$1000</h6>
-						<p class="card-text">Maceta de cemento 10Cm x 10Cm</p>
-						<a href="#" class="btn-secondary btn-more2 text-decoration-none">Agregar al carrito</a>
-					</div>
-				</div>
-				<!--3-->
-				<div class="card bg-dark m-auto" style="width: 18rem;">
-					<img src="img/m-15.png" alt="maceta de cemento figura radio redondo altura 10 centimetros" class="card-img-top w-100 d-block">
-					<div class="card-body">
-						<h5 class="card-title T-sizeM">Dublin</h5>
-						<h6 class="card-subtitle mb-2 text-muted">$1000</h6>
-						<p class="card-text">Maceta de cemento 10Cm x 10Cm.</p>
-						<a href="#" class="btn-secondary btn-more2 text-decoration-none">Agregar al carrito</a>
-					</div>
-				</div>
-				<!--4-->
-				<div class="card bg-dark m-auto" style="width: 18rem;">
-					<img src="img/m-16.png" alt="maceta de cemento figura cuadrada puntas redondeadas de 10 centimetros" class="card-img-top w-100 d-block">
-					<div class="card-body">
-						<h5 class="card-title T-sizeM">Moscu</h5>
-						<h6 class="card-subtitle mb-2 text-muted">$1000</h6>
-						<p class="card-text">Maceta de cemento 10Cm x 10Cm.</p>
-						<a href="#" class="btn-secondary btn-more2 text-decoration-none">Agregar al carrito</a>
-					</div>
-				</div>
-				<!--5-->
-				<div class="card bg-dark m-auto" style="width: 18rem;">
-					<img src="img/m-17.png" alt="maceta de cemento figura cuadrada con terminacion de 10 centimetros" class="card-img-top w-100 d-block">
-					<div class="card-body">
-						<h5 class="card-title T-sizeM">Roma</h5>
-						<h6 class="card-subtitle mb-2 text-muted">$1000</h6>
-						<p class="card-text">Maceta de cemento 10Cm x 10Cm.</p>
-						<a href="#" class="btn-secondary btn-more2 text-decoration-none">Agregar al carrito</a>
-					</div>
-				</div>
-				<!--6-->
-				<div class="card bg-dark m-auto" style="width: 18rem;">
-					<img src="img/m-18.png" alt="maceta de cemento cilindrica de 10 centimetros" class="w-100 d-block card-img-top">
-					<div class="card-body">
-						<h5 class="card-title T-sizeM">Havana</h5>
-						<h6 class="card-subtitle mb-2 text-muted">$1000</h6>
-						<p class="card-text">Maceta de cemento 10Cm x 10Cm</p>
-						<a href="#" class="btn-secondary btn-more2 text-decoration-none">Agregar al carrito</a>
-					</div>
-				</div>
+			<div id="container" class="row prod-wrapper bg-dark m-auto text-center" ></div>
 			</div>
 		</section>
-		<!-- END TABLE-->
 	</main>
 	<!-- FOOTER -->
 	<footer class="bg-dark bg-gradient">
