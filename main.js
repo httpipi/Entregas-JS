@@ -79,8 +79,7 @@ const listaCarrito= ()=> {
     canvasCarrito.innerHTML="";
     if(carrito.length > 0){
         carrito.forEach((producto, codigo)=>{
-            total = total += producto.precio * producto.cantidad;
-            //subtotal = total 
+            total = total + producto.precio * producto.cantidad;
             const carritoFinal = document.createElement("div");
             carritoFinal.classList.add("d-flex" , "font" , "T-sizeS");
             carritoFinal.innerHTML=`
