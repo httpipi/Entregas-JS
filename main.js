@@ -1,4 +1,4 @@
-//                                  PRODUCTOS
+//                  PRODUCTOS
 let productos = [
     {
         id: 1,
@@ -37,7 +37,7 @@ let productos = [
         imagen: "img/m-18.png",
     },
 ];
-
+//                      LISTA PRODUCTOS
 const listaProductos = () => {
     let contenedor = document.getElementById("container");
     productos.forEach((producto, codigo) => {
@@ -53,7 +53,7 @@ const listaProductos = () => {
         contenedor.appendChild(card);
     });
 };
-
+//                      CARRITO
 listaProductos();
 let carrito = [];
 let canvasCarrito = document.getElementById("carritoCanvas");
@@ -67,22 +67,24 @@ const carritoAdd = (codigo) => {
         itemAdd.cantidad = 1;
         carrito.push(itemAdd);
         listaCarrito();
+
     } else {
         carrito[codigoProducto].cantidad += 1;
         listaCarrito();
     }
-};
 
-let total= 0;
-const listaCarrito= ()=> {
-    canvasCarrito.className= "carritoCanvas";
-    canvasCarrito.innerHTML="";
-    if(carrito.length > 0){
-        carrito.forEach((producto, codigo)=>{
-            total = total + producto.precio * producto.cantidad;
+};
+//                      TOTAL CARRITO
+let total = document.getElementById('precioTotal')
+
+const listaCarrito = () => {
+    canvasCarrito.className = "carritoCanvas";
+    canvasCarrito.innerHTML = "";
+    if (carrito.length > 0) {
+        carrito.forEach((producto, codigo) => {
             const carritoFinal = document.createElement("div");
-            carritoFinal.classList.add("d-flex" , "font" , "T-sizeS");
-            carritoFinal.innerHTML=`
+            carritoFinal.classList.add("d-flex", "font", "T-sizeS");
+            carritoFinal.innerHTML = `
             <img class="w-05 productoCanvas" src="${producto.imagen}"/>
             <div class="w-100 productoCanvas ">${producto.nombre}</div>
             <div class="w-100 productoCanvas"> Cantidad: ${producto.cantidad}</div>
@@ -90,21 +92,23 @@ const listaCarrito= ()=> {
             <div class="w-100 productoCanvas"> Subtotal: $${producto.precio * producto.cantidad}</div>
             <button type="button" class="w-10 productoCanvas btn-close btn-close-white" id="eliminar" onClick="eliminarCodigo(${codigo})"></button>
             `;
-        canvasCarrito.appendChild(carritoFinal);
+            canvasCarrito.appendChild(carritoFinal);
+            total.innerText = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
         });
+        //                  BOTON FINALIZAR COMPRA
         const totalFinal = document.createElement("div");
-        totalFinal.className= "my-1";
-        totalFinal.innerHTML= `
-        <div class="totalStyle font T-sizeM my-1">Total: $${total}</div>
-        <button class="finCompra btn-secondary btn-more2 text-decoration-none" onClick="">Finalizar Compra</button>`
+        totalFinal.className = "botoncompra";
+        totalFinal.innerHTML = `
+        <button class="finCompra font btn-secondary btn-more2 text-decoration-none" id="fincompra" onClick="finalizarCompra()">Finalizar Compra</button>
+        `
         canvasCarrito.appendChild(totalFinal);
     } else {
         canvasCarrito.classList.remove("carritoCanvas")
     }
 }
-
-const eliminarCodigo = (codigo)=> {
-    carrito.splice(codigo,1);
+//                          BORRA ITEMS DEL CARRITO
+const eliminarCodigo = (codigo) => {
+    carrito.splice(codigo, 1);
     listaCarrito();
+    total.innerText = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
 }
-

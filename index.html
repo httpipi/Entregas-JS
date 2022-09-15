@@ -28,8 +28,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav text-white-50 fs-4 fw-bold">
-				<button class="btn-more carritoBtn fw-bold T-sizeM bg-secondary" type="button"
-					data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+				<button class="btn-more carritoBtn fw-bold T-sizeM bg-secondary d-flex justify-content-center"
+					type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
 					aria-controls="offcanvasWithBothOptions">Carrito</button>
 			</div>
 		</div>
@@ -37,13 +37,21 @@
 		<div class="offcanvas offcanvas-start bg-dark w-auto" data-bs-scroll="true" tabindex="-1"
 			id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
 			<div class="offcanvas-header">
-				<h5 class="offcanvas-title font T-sizeM" id="offcanvasWithBothOptionsLabel">Lista del carrito.</h5>
+				<h5 class="offcanvas-title font T-sizeM d-flex ms-5" id="offcanvasWithBothOptionsLabel">Lista del
+					carrito.</h5>
 				<button type="button" id="eliminar" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
 					aria-label="Close"></button>
 			</div>
-			<div id="carritoCanvas" class="offcanvas-body">
+			<div id="carritoCanvas">
 				<a name="carritoCanvas"></a>
 			</div>
+			<div class="totalStyle font T-sizeM my-1">
+				<h5>Total: $<span id="precioTotal"></span></h5>
+			</div>
+			<div class="botoncompra">
+			</div>
+			<section class="cliente" id="cliente">
+			</section>
 		</div>
 	</nav>
 	<!-- HEADER CARRUSEL -->

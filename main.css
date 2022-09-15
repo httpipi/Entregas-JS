@@ -191,7 +191,7 @@ body {
 }
 
 .finCompra {
-  margin-left: 345px;
+  margin-left: 305px;
 }
 
 .carritoBtn {
@@ -204,5 +204,5 @@ body {
   font-family: "Poppins", sans-serif;
   color: #f5f0f0;
   line-height: 1.6;
-  padding: 1.5em 1.5em;
+  padding: .5em .5em;
 }
