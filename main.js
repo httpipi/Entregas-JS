@@ -117,7 +117,7 @@ const listaCarrito = () => {
         let boton = document.getElementById("enviarInfo");
         boton.addEventListener("click", cargarCliente);
         //                  EVENTO TECLA ENTER
-        var input = document.getElementById("adress" , "name" , "phone");
+        var input = document.getElementById("adress");
         input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault();
