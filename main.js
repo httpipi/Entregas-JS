@@ -159,7 +159,7 @@ function mostrarCliente(cliente) {
     //agregar elementos
     let nuevoContenido = document.createElement("div");
     nuevoContenido.innerHTML = `
-    <div class="alert alert-success p-3" role="alert">
+    <div class="alert alert-success m-4" role="alert">
         <h4 class="alert-heading">¡${cliente.nombre}, Muchas Gracias!</h4>
         <p>Sus datos fueron ingresados y su compra fue exitosa.</p>
         <hr>
