@@ -1,4 +1,4 @@
-//                  PRODUCTOS
+//                                      PRODUCTOS
 let productos = [
     {
         id: 1,
@@ -37,7 +37,7 @@ let productos = [
         imagen: "img/m-18.png",
     },
 ];
-//                      LISTA PRODUCTOS
+//                                      LISTA PRODUCTOS
 const listaProductos = () => {
     let contenedor = document.getElementById("container");
     productos.forEach((producto, codigo) => {
@@ -53,12 +53,22 @@ const listaProductos = () => {
         contenedor.appendChild(card);
     });
 };
-//                      CARRITO
+//                                      CARRITO
 listaProductos();
-let carrito = [];
+
 let canvasCarrito = document.getElementById("carritoCanvas");
 
 const carritoAdd = (codigo) => {
+    const codFinded = carrito.findIndex((item) => {
+        return item.id === productos[codigo].id;
+    })
+    if (codFinded === -1) {
+        const productoAgregar = productos[codigo];
+        productoAgregar.cantidad = 1;
+        carrito.push(productoAgregar)
+        actStorage(carrito);
+        listaCarrito();
+    }
     const codigoProducto = carrito.findIndex((item) => {
         return item.id === productos[codigo].id
     });
@@ -72,7 +82,7 @@ const carritoAdd = (codigo) => {
         listaCarrito();
     }
 };
-//                      TOTAL CARRITO
+//                                      TOTAL CARRITO
 let total = document.getElementById('precioTotal')
 
 const listaCarrito = () => {
@@ -93,7 +103,7 @@ const listaCarrito = () => {
             canvasCarrito.appendChild(carritoFinal);
             total.innerText = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
         });
-        //                  BOTON FINALIZAR COMPRA
+        //                          BOTON FINALIZAR COMPRA
         const totalFinal = document.createElement("div");
         totalFinal.className = "botoncompra";
         totalFinal.innerHTML = `
@@ -116,7 +126,7 @@ const listaCarrito = () => {
         canvasCarrito.appendChild(totalFinal);
         let boton = document.getElementById("enviarInfo");
         boton.addEventListener("click", cargarCliente);
-        //                  EVENTO TECLA ENTER
+        //                          EVENTO TECLA ENTER
         var input = document.getElementById("adress");
         input.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
@@ -128,13 +138,14 @@ const listaCarrito = () => {
         canvasCarrito.classList.remove("carritoCanvas")
     }
 }
-//                          BORRA ITEMS DEL CARRITO
+//                                  BORRA ITEMS DEL CARRITO
 const eliminarCodigo = (codigo) => {
     carrito.splice(codigo, 1);
+    actStorage(carrito);
     listaCarrito();
     total.innerText = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
 }
-//                          FORMULARIO DE CLIENTE
+//                                  FORMULARIO DE CLIENTE
 class Cliente {
     constructor(nombre, telefono, direccion) {
         this.nombre = nombre;
@@ -143,7 +154,7 @@ class Cliente {
     }
 }
 
-// capturar elementos
+//                                  CAPTURAR ITEMS
 function cargarCliente() {
     let nombre = document.getElementById("name").value;
     let telefono = document.getElementById("phone").value;
@@ -152,11 +163,11 @@ function cargarCliente() {
     console.log(cliente1);
     mostrarCliente(cliente1);
 }
-//eliminar elementos
+//                                  ELIMINAR ITEMS
 function mostrarCliente(cliente) {
     let formulario = document.getElementById("cliente");
     formulario.innerHTML = "";
-    //agregar elementos
+    //                              AGREGAR ITEMS
     let nuevoContenido = document.createElement("div");
     nuevoContenido.innerHTML = `
     <div class="alert alert-success m-4" role="alert">
@@ -167,4 +178,17 @@ function mostrarCliente(cliente) {
     </div>`;
     nuevoContenido.className = "info-cliente";
     formulario.appendChild(nuevoContenido);
+}
+//                                          JSON
+
+const actStorage = (carrito) => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+//                                    ARRAY CARRITO 
+//(esta parte la tuve que poner aca por que sino me daba error de que no podia inicar una funcion antes de declararla necesito saber si puede estar ahi o donde deberia ubicarla para no recibir ese error originalmente estaba en la linea "58")
+let carrito = [];
+    if (localStorage.getItem("carrito")) {
+        carrito = JSON.parse(localStorage.getItem("carrito"));
+        actStorage(carrito);
+        listaCarrito();
 }
