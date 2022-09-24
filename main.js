@@ -186,9 +186,8 @@ const actStorage = (carrito) => {
 };
 //                                    ARRAY CARRITO 
 //(esta parte la tuve que poner aca por que sino me daba error de que no podia inicar una funcion antes de declararla necesito saber si puede estar ahi o donde deberia ubicarla para no recibir ese error originalmente estaba en la linea "58")
-let carrito = [];
-    if (localStorage.getItem("carrito")) {
-        carrito = JSON.parse(localStorage.getItem("carrito"));
-        actStorage(carrito);
-        listaCarrito();
-}
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [] // OPERADOR LOGICO "OR" INCORPORADO
+    actStorage(carrito);
+    listaCarrito();
+
