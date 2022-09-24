@@ -59,26 +59,18 @@ listaProductos();
 let canvasCarrito = document.getElementById("carritoCanvas");
 
 const carritoAdd = (codigo) => {
-    const codFinded = carrito.findIndex((item) => {
+    const codigoProducto = carrito.findIndex((item) => {
         return item.id === productos[codigo].id;
     })
-    if (codFinded === -1) {
-        const productoAgregar = productos[codigo];
-        productoAgregar.cantidad = 1;
-        carrito.push(productoAgregar)
-        actStorage(carrito);
-        listaCarrito();
-    }
-    const codigoProducto = carrito.findIndex((item) => {
-        return item.id === productos[codigo].id
-    });
     if (codigoProducto === -1) {
-        const itemAdd = productos[codigo]
+        const itemAdd = productos[codigo];
         itemAdd.cantidad = 1;
-        carrito.push(itemAdd);
+        carrito.push(itemAdd)
+        actStorage(carrito);
         listaCarrito();
     } else {
         carrito[codigoProducto].cantidad += 1;
+        actStorage(carrito);
         listaCarrito();
     }
 };
