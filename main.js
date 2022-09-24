@@ -48,7 +48,7 @@ const listaProductos = () => {
         <div class="card-body">
             <h5 class="card-title">${producto.nombre}</h5>
             <p class="card-text">$${producto.precio}</p>
-            <a href="#" class="btn-secondary btn-more2 text-decoration-none" onClick="carritoAdd(${codigo})">Agregar al carrito</a>
+            <button type="button" class="btn-secondary pointer btn-more2 text-decoration-none" onClick="carritoAdd(${codigo})">Agregar al carrito</button>
         </div>`;
         contenedor.appendChild(card);
     });
