@@ -207,3 +207,8 @@ body {
   line-height: 1.6;
   padding: .5em .5em;
 }
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
