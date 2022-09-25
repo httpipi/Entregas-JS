@@ -68,13 +68,6 @@ const carritoAdd = (codigo) => {
         const itemAdd = productos[codigo];
         itemAdd.cantidad = 1;
         carrito.push(itemAdd)
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Producto Agregado",
-            showConfirmButton: false,
-            timer: 1000,
-        });
         actStorage(carrito);
         listaCarrito();
     } else {
