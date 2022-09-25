@@ -53,8 +53,6 @@ const listaProductos = () => {
         contenedor.appendChild(card);
     });
 };
-//                                      LIBRERIA SHOWALERT
-
 //                                      CARRITO
 listaProductos();
 
@@ -68,7 +66,7 @@ const carritoAdd = (codigo) => {
         const itemAdd = productos[codigo];
         itemAdd.cantidad = 1;
         carrito.push(itemAdd)
-        Swal.fire({
+        Swal.fire({                 //              ALERTA INCORPORADA CON LIBRERIA
             position: "center",
             icon: "success",
             title: "Producto Agregado",
@@ -81,7 +79,7 @@ const carritoAdd = (codigo) => {
         listaCarrito();
     } else {
         carrito[codigoProducto].cantidad += 1;
-        Swal.fire({
+        Swal.fire({                 //              ALERTA INCORPORADA CON LIBRERIA
             position: "center",
             icon: "success",
             title: "Producto Agregado",
