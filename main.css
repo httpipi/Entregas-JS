@@ -216,3 +216,25 @@ body {
 .pointer{
   cursor: pointer;
 }
+
+
+
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+.countdown .day, .countdown .hour, .countdown .min, .countdown .sec {
+  padding: 20px;
+  text-align: center;
+}
+.countdown .day .num, .countdown .hour .num, .countdown .min .num, .countdown .sec .num {
+  display: block;
+  font-size: 40px;
+}
+.countdown .day .word, .countdown .hour .word, .countdown .min .word, .countdown .sec .word {
+  display: block;
+  font-size: 20px;
+}
