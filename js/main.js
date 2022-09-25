@@ -53,6 +53,8 @@ const listaProductos = () => {
         contenedor.appendChild(card);
     });
 };
+//                                      LIBRERIA SHOWALERT
+
 //                                      CARRITO
 listaProductos();
 
@@ -66,10 +68,26 @@ const carritoAdd = (codigo) => {
         const itemAdd = productos[codigo];
         itemAdd.cantidad = 1;
         carrito.push(itemAdd)
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Producto Agregado",
+            showConfirmButton: false,
+            timer: 1000,
+        });
         actStorage(carrito);
         listaCarrito();
     } else {
         carrito[codigoProducto].cantidad += 1;
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Producto Agregado",
+            showConfirmButton: false,
+            background: "#212529",
+            color: "#f5f0f0",
+            timer: 1000,
+        });
         actStorage(carrito);
         listaCarrito();
     }
