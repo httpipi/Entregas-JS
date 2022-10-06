@@ -1,0 +1,44 @@
+[
+    {
+        "cantidad": 0,
+        "id": 1,
+        "nombre": "Berlin",
+        "precio": 1000,
+        "imagen": "img/m-13.png"
+    },
+    {
+        "cantidad": 0,
+        "id": 2,
+        "nombre": "Paris",
+        "precio": 400,
+        "imagen": "img/m-14.png"
+    },
+    {
+        "cantidad": 0,
+        "id": 3,
+        "nombre": "Dublin",
+        "precio": 500,
+        "imagen": "img/m-15.png"
+    },
+    {
+        "cantidad": 0,
+        "id": 4,
+        "nombre": "Moscu",
+        "precio": 300,
+        "imagen": "img/m-16.png"
+    },
+    {
+        "cantidad": 0,
+        "id": 5,
+        "nombre": "Roma",
+        "precio": 400,
+        "imagen": "img/m-17.png"
+    },
+    {
+        "cantidad": 0,
+        "id": 6,
+        "nombre": "Havana",
+        "precio": 500,
+        "imagen": "img/m-18.png"
+    }
+]

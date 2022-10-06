@@ -1,61 +1,29 @@
-//                                      PRODUCTOS
-let productos = [
-    {
-        id: 1,
-        nombre: "Berlin",
-        precio: 1000,
-        imagen: "img/m-13.png",
-    },
-    {
-        id: 2,
-        nombre: "Paris",
-        precio: 400,
-        imagen: "img/m-14.png",
-    },
-    {
-        id: 3,
-        nombre: "Dublin",
-        precio: 500,
-        imagen: "img/m-15.png",
-    },
-    {
-        id: 4,
-        nombre: "Moscu",
-        precio: 300,
-        imagen: "img/m-16.png",
-    },
-    {
-        id: 5,
-        nombre: "Roma",
-        precio: 400,
-        imagen: "img/m-17.png",
-    },
-    {
-        id: 6,
-        nombre: "Havana",
-        precio: 500,
-        imagen: "img/m-18.png",
-    },
-];
 //                                      LISTA PRODUCTOS
-const listaProductos = () => {
-    let contenedor = document.getElementById("container");
-    productos.forEach((producto, codigo) => {
-        let card = document.createElement("div");
-        card.classList.add("card", "border-dark", "bg-dark", "m-auto", "w-30");
-        card.innerHTML = `
-        <img src="${producto.imagen}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${producto.nombre}</h5>
-            <p class="card-text">$${producto.precio}</p>
-            <button type="button" class="btn-secondary pointer btn-more2 text-decoration-none" onClick="carritoAdd(${codigo})">Agregar al carrito</button>
-        </div>`;
-        contenedor.appendChild(card);
-    });
-};
-//                                      CARRITO
-listaProductos();
+const listaProductos = document.querySelector("#container")
 
+let productos = []
+
+const productoFetch = async()=>{
+    const resp = await fetch("/data.json")
+    const data = await resp.json()
+    data.forEach((producto, codigo)=>{
+        const card  = document.createElement("div")
+                card.classList.add("card", "border-dark", "bg-dark", "m-auto", "w-30")
+                card.innerHTML = `
+                <img src="${producto.imagen}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="card-text">$${producto.precio}</p>
+                <button type="button" class="btn-secondary pointer btn-more2 text-decoration-none" onClick="carritoAdd(${codigo})">Agregar al carrito</button>
+                </div>`;
+                listaProductos.append(card)
+                productos.push(producto)
+        })
+}
+productoFetch();
+
+
+//                                      CARRITO
 let canvasCarrito = document.getElementById("carritoCanvas");
 
 const carritoAdd = (codigo) => {
@@ -66,7 +34,7 @@ const carritoAdd = (codigo) => {
         const itemAdd = productos[codigo];
         itemAdd.cantidad = 1;
         carrito.push(itemAdd)
-        Swal.fire({                 //              ALERTA INCORPORADA CON LIBRERIA
+        Swal.fire({                 
             position: "center",
             icon: "success",
             title: "Producto Agregado",
@@ -79,7 +47,7 @@ const carritoAdd = (codigo) => {
         listaCarrito();
     } else {
         carrito[codigoProducto].cantidad += 1;
-        Swal.fire({                 //              ALERTA INCORPORADA CON LIBRERIA
+        Swal.fire({                 
             position: "center",
             icon: "success",
             title: "Producto Agregado",
@@ -200,4 +168,3 @@ const actStorage = (carrito) => {
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [] // OPERADOR LOGICO "OR" INCORPORADO
     actStorage(carrito);
     listaCarrito();
-
