@@ -22,7 +22,6 @@ const productoFetch = async()=>{
 }
 productoFetch();
 
-
 //                                      CARRITO
 let canvasCarrito = document.getElementById("carritoCanvas");
 
@@ -89,7 +88,7 @@ const listaCarrito = () => {
             <h3 class="font d-flex justify-content-center">Ingrese sus datos</h3>
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Nombre Y Apellido" aria-label="Nombre Y Apellido" name="name" id="name">
+                    <input type="text" class="form-control" placeholder="Nombre Y Apellido" aria-label="Nombre Y Apellido" name="name" id="name" required>
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" name="phone" id="phone">
